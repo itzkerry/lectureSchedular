@@ -11,7 +11,7 @@ const app = express();
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://lecture-schedular.vercel.app",
+    origin: "https://lecture-schedular.vercel.app",
     credentials: true,
   }),
 );
