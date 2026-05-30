@@ -53,12 +53,13 @@ const getMe = async (req, res) => {
     return res.status(401).json({ loggedIn: false });
   }
 };
+
 const logout = async (req, res) => {
   try {
     res.clearCookie("token", {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
+      sameSite: "none",
     });
 
     return res.status(200).json({ message: "Logged out successfully" });
